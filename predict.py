@@ -25,7 +25,7 @@ class Predictor(BasePredictor):
         subprocess.check_call(["pget", "--help"], close_fds=True)
 
         if os.path.exists("tmp"):
-            shutil.rmtree("tmp")
+            subprocess.check_call(["rm", "-rf", "tmp"], close_fds=True)
 
         print("downloading")
         cmd = ["pget"]
